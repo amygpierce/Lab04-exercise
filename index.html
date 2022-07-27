@@ -1,165 +1,73 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@amygpierce 
-amygpierce
-/
-about-me-diablokitty
-Public
-forked from diablokitty/about-me
-Code
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-about-me-diablokitty/js/app.js /
-@diablokitty
-diablokitty think the bugs are ironed
-Latest commit f3ed0ea 3 days ago
- History
- 1 contributor
-136 lines (117 sloc)  5.52 KB
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
 
-'use strict';
+  <!-- Lab Class 3 rubric: Create a “Top Ten” at the bottom of your HTML page as an ordered list in HTML. Some ideas that you can include could be top ten movies, top ten favorite places, or top ten places to visit. You may choose to do whatever top ten list that you wish.
+Convert your work experience and education summary into an unordered list using HTML -->
+  
+  <body>
+    <main>
+      <h1>About Me</h1>
+      <div class="imagebox">
+        <!-- Include on your HTML page a short biography, your education history, 
+          an overview of your job experience, and any goals that you may have -->
+        <img src="img/Headshot.jpg" width="200" height="200"
+          alt="picture of grumpy girl">
+        
+        <h3>Biography</h3>
+        <p>  I am a recovering accountant (who sometimes relapses during tax season), who decided that
+        a second act as a developer would be a great way to lose whatever sanity I have left. 
+        I am the daughter of a GM Systems Analyst, and the granddaughter of one of the original 
+        'punchcard girls' at the University of Chicago's first computer lab, so you could say that code is in my genes. 
+        </p>
+        <p>When I'm not working, I'm gardening, quilting, playing with dogs, reading, and hanging out with my hubby. 
+        I also travel frequently. I was in 6 cities on two continents just last month!
+        </p>
+      </div>
+      <div>  
+        <h3>Education</h3>    
+          <ul>
+            <li>Seattle Central College - College Transfer, A.A.</li>
+            <li>University of Washington - Business Administration with Accounting Emphasis, B.A.</li>
+          </ul>
 
-//remember these elements: five questions, username displayed at beginning and end
-//for class 3 lab add:
-//a 6th question to the guessing game that takes in a numeric input
-//by prompting the user to guess a number.
-//Indicates through an alert if the guess is “too high” or “too low”.
-//It should give the user exactly four opportunities to get the correct answer.
-//After all attempts have been exhausted, tell the user the correct answer. Consider using a loop of some sort.
-//a 7th question Add a 7th question that has multiple possible correct answers that are stored in an array.
-//Give the user 6 attempts to guess the correct answer.
-//The guesses will end once the user guesses a correct answer or they run out of attempts.
-//Display all the possible correct answers to the user.
-//Consider using a loop of some sort for this question.
-//adjust the final score to include the two new questions.
-
-
-console.log('hello');
-//Five questions with yes or no answers
-alert('Welcome to all about me!');
-let username = prompt('What is your name?');
-console.log(`Question: What is your name? Response: ${username}`);
-let score = 0;
-let ques1 = prompt(`Hi ${username}, I'm going to ask you a series of yes or no questions. For each correct answer, you get one point. Are you ready?`).toLowerCase();
-//console.log(`Question: Are you ready? Response: ${ques1}`);
-
-if(ques1 === 'yes' || ques1 === 'y' ) {
-  score = score + 1;
-  alert(`Ok ${username} that was an easy one. Your score is ${score}.`);
-  //console.log(`Ok ${username} that was an easy one. Your score is ${score}.`);
-}
-alert(`Next question!`);
-
-let ques2 = prompt('Will I ever be a super awesome code fiend?').toLowerCase();
-//console.log(`Question: Will I ever be a super awesome code fiend? Response: ${ques2});
-
-if(ques2 === 'yes' || ques2 === 'y' ) {
-  score = score + 1;
-  alert(`Oh ${username}, your confidence is inspiring! Your score is ${score}.`);
-  //console.log(`Oh ${username}, your confidence is inspiring! Your score is ${score}.`);
-}
-else {
-  alert(`Hmm. Well I don't know about that. Let's try another one.`);
-}
-let ques3 = prompt(`So ${username}, do you think I'll ever meet a plane I don't want to get on?`).toLowerCase();
-//console.log(`Question: Do you think I'll ever meet a plane I don't want to get on? Response: ${ques3});
-
-if(ques3 === 'yes' || ques3 === 'y' ) {
-  score = score + 1;
-  alert(`Well, you're right, ${username}. There are a few places I wouldn't want to end up! Your score is ${score}.`);
-  //console.log(`Well, you're right, ${username}. There are a few places I wouldn't want to end up! Your score is ${score}.`);
-}
-else {
-  alert(`Oh I don't know, there are a few places I wouldn't want to end up!`);
-}
-
-let ques4 = prompt(`Next question ${username}, is purple my favorite color?`).toLowerCase();
-//console.log(`Question: Is purple my favorite color? Response: ${ques4}`);
-
-if(ques4 === 'yes' || ques4 === 'y' ) {
-  score = score + 1;
-  alert(`What gave it away?!? Your score is ${score}.`);
-  //console.log(`What gave it away?!? Your score is ${score}.`);
-}
-else {
-  alert(`It certainly is, but blue is my second favorite, so I understand the confusion.`);
-}
-
-let ques5 = prompt(`Listen ${username}, I need a serious answer. Do you like my new hat?`).toLowerCase();
-//console.log(`Question: Do you like my new hat? Response: ${ques5}`);
-
-if(ques5 === 'yes' || ques5 === 'y' ) {
-  score = score + 1;
-  alert(`It IS kind of a great party hat. Your score is ${score}.`);
-  //console.log(`It IS kind of a great party hat. Your score is ${score}.`);
-}
-else {
-  alert(`Not a fan of Go, Dog, Go, ${username}? That's ok.`);
-}
-
-let goodguess = Math.floor(Math.random() * 101);
-console.log(goodguess);
-//math code string found at https://www.w3schools.com/js/js_random.asp
-
-let ques6 = prompt(`Let's try something else, ${username}. I'm thinking of a number between 1 and 100. Try to guess the number.`);
-//ques6 = Number(ques6); if we wanted to use strictly not equal this code would go here and at lines 93 and 96
-let guesses = 4;
-
-while(ques6 != goodguess && guesses >= 1) {
-  //console.log(`for loop`);
-  if(ques6 > goodguess){
-    ques6 = prompt(`Too high, ${username}. You have ${guesses} tries left. Next guess?`);
-    guesses--;
-  }
-  else if (ques6 < goodguess){
-    ques6 = prompt(`Too low, ${username}. You have ${guesses} tries left. Try again?`);
-    guesses--;
-  }
-}
-//console.log('You\'re out of the loop.');
-if(ques6==goodguess){
-  score++;
-  alert(`You got it, ${username}! Your score is ${score}.`);
-}
-if(guesses===0) {
-  alert(`Oh no, ${username}! You ran out of guesses! The answer was ${goodguess}.`);
-}
-
-
-alert(`Ok, ${username}, last question! ${username}, I used to have cats named after Disney character. Can you guess which characters?`);
-alert('Here are your choices:');
-let guesschoice = ['mickey','minnie','goofy','donald','daisy','pluto','baloo','sneezy','pongo','lady'];
-//The correct choices are goofy and lady.
-let chances = 6;
-for (let i = 0; i<guesschoice.length; i++){
-  alert(guesschoice[i]);
-}
-
-while (chances > 0) {
-
-  let ques7 = prompt(`What's your guess? You have ${chances} chances left.`);
-  ques7 += ques7.toString.toLowerCase;
-  console.log(ques7);
-
-  if(ques7 === guesschoice[2].toLowerCase || ques7 === guesschoice[9].toLowerCase) {
-    chances = 0;
-    score++;
-    alert(`You're right ${username}!`);
-    console.log(`${ques7} is correct.`);
-  }
-  else{
-    chances--;
-    alert(`That's not it, ${username}. Try again.`);
-  }
-}
-alert(`${username}, you've been a great sport! Your ending score is ${score}, but don't worry, there's no prize except the satisfaction of a game well played.`);
+        <h3>Job Experience</h3>
+          <ul>
+            <li> Ironguard Security, 2008 to present: Office Manager </li>
+            <li> Synapse, 2011 to 2013: Accounts Payable Manager</li>
+            <li> University of Washington, 2005 to 2009: Grant Manager</li>
+          </ul>
+      </div>
+      <div>
+        <h3>Fun Fact Checker</h3>  
+        <p>Two truths and a lie:
+          <ul>
+            <li>My favorite snowball fight was on a glacier.</li>
+            <li> I am a retired barrel racer.</li>
+            <li>I drove for twenty hours straight without sleep.</li>
+          </ul>
+        </p>  
+        
+        <h3>My favorite snacks:</h3>
+        <ol>
+          <li>Reece's Peanut Butter Cups</li>
+          <li>Sunflower seeds</li>
+          <li>Watermelon</li>
+          <li>Dried cranberries</li>
+          <li>Celery sticks</li>
+          <li>Kettlecorn</li>
+          <li>Soft caramels</li>
+          <li>Australian licorice</li>
+          <li>Roasted seaweed</li>
+          <li>Avocado toast</li>
+        </ol>
+      </div>  
+    </main>
+    <script src="js/app.js"></script>
+  </body>
+</html>
