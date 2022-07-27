@@ -57,35 +57,34 @@ function thirdQuestion(username) {
   else {
     alert('Oh I don\'t know, there are a few places I wouldn\'t want to end up!');
   }
-  console.log(score);
+}
+function fourthQuestion(username) {
+  let ques4 = prompt(`Next question ${username}, is purple my favorite color?`).toLowerCase();
+  //console.log(`Question: Is purple my favorite color? Response: ${ques4}`);
 
-  return score;
+  if (ques4 === 'yes' || ques4 === 'y') {
+    score = score + 1;
+    alert(`What gave it away?!? Your score is ${score}.`);
+    //console.log(`What gave it away?!? Your score is ${score}.`);
+  }
+  else {
+    alert(`It certainly is, ${username}, but blue is my second favorite, so I understand the confusion.`);
+  }
 }
 
-// let ques4 = prompt(`Next question ${username}, is purple my favorite color?`).toLowerCase();
-// //console.log(`Question: Is purple my favorite color? Response: ${ques4}`);
+function fifthQuestion(username) {
+  let ques5 = prompt(`Listen ${username}, I need a serious answer. Do you like my new hat?`).toLowerCase();
+  //console.log(`Question: Do you like my new hat? Response: ${ques5}`);
 
-// if (ques4 === 'yes' || ques4 === 'y') {
-//   score = score + 1;
-//   alert(`What gave it away?!? Your score is ${score}.`);
-//   //console.log(`What gave it away?!? Your score is ${score}.`);
-// }
-// else {
-//   alert(`It certainly is, ${username}, but blue is my second favorite, so I understand the confusion.`);
-// }
-
-// let ques5 = prompt(`Listen ${username}, I need a serious answer. Do you like my new hat?`).toLowerCase();
-// //console.log(`Question: Do you like my new hat? Response: ${ques5}`);
-
-// if (ques5 === 'yes' || ques5 === 'y') {
-//   score = score + 1;
-//   alert(`It IS kind of a great party hat. Your score is ${score}.`);
-//   //console.log(`It IS kind of a great party hat. Your score is ${score}.`);
-// }
-// else {
-//   alert(`Not a fan of Go, Dog, Go, ${username}? That's ok.`);
-// }
-
+  if (ques5 === 'yes' || ques5 === 'y') {
+    score = score + 1;
+    alert(`It IS kind of a great party hat. Your score is ${score}.`);
+    //console.log(`It IS kind of a great party hat. Your score is ${score}.`);
+  }
+  else {
+    alert(`Not a fan of Go, Dog, Go, ${username}? That's ok.`);
+  }
+}
 // let goodguess = Math.floor(Math.random() * 101);
 // console.log(goodguess);
 // //math code string found at https://www.w3schools.com/js/js_random.asp
@@ -116,8 +115,8 @@ function thirdQuestion(username) {
 firstQuestion(username);
 secondQuestion(username);
 thirdQuestion(username);
-//fourthQuestion(username, score);
-//fifthQuestion(username, score);
+fourthQuestion(username);
+fifthQuestion(username);
 //sixthQuestion(username, score);
 
 alert(`${username}, you've been a great sport! Your ending score is ${score}, but don't worry, there's no prize except the satisfaction of a game well played.`);
