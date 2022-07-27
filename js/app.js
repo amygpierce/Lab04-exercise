@@ -27,11 +27,9 @@ function firstQuestion(username) {
     alert(`Ok ${username} that was an easy one. Your score is ${score}.`);
     //console.log(`Ok ${username} that was an easy one. Your score is ${score}.`);
   }
-
-  return score;
 }
 
-function secondQuestion(username, score) {
+function secondQuestion(username) {
   alert('Next question!');
 
   let ques2 = prompt('Will I ever be a super awesome code fiend?').toLowerCase();
@@ -45,22 +43,24 @@ function secondQuestion(username, score) {
   else {
     alert('Hmm. Well I don\'t know about that. Let\'s try another one.');
   }
+}
+function thirdQuestion(username) {
+
+  let ques3 = prompt(`So ${username}, do you think I'll ever meet a plane I don't want to get on?`).toLowerCase();
+  //console.log(`Question: Do you think I'll ever meet a plane I don't want to get on? Response: ${ques3});
+
+  if (ques3 === 'yes' || ques3 === 'y') {
+    score = score + 1;
+    alert(`Well, you're right, ${username}. There are a few places I wouldn't want to end up! Your score is ${score}.`);
+    //console.log(`Well, you're right, ${username}. There are a few places I wouldn't want to end up! Your score is ${score}.`);
+  }
+  else {
+    alert('Oh I don\'t know, there are a few places I wouldn\'t want to end up!');
+  }
+  console.log(score);
 
   return score;
-
 }
-
-// let ques3 = prompt(`So ${username}, do you think I'll ever meet a plane I don't want to get on?`).toLowerCase();
-// //console.log(`Question: Do you think I'll ever meet a plane I don't want to get on? Response: ${ques3});
-
-// if (ques3 === 'yes' || ques3 === 'y') {
-//   score = score + 1;
-//   alert(`Well, you're right, ${username}. There are a few places I wouldn't want to end up! Your score is ${score}.`);
-//   //console.log(`Well, you're right, ${username}. There are a few places I wouldn't want to end up! Your score is ${score}.`);
-// }
-// else {
-//   alert('Oh I don\'t know, there are a few places I wouldn\'t want to end up!');
-// }
 
 // let ques4 = prompt(`Next question ${username}, is purple my favorite color?`).toLowerCase();
 // //console.log(`Question: Is purple my favorite color? Response: ${ques4}`);
@@ -114,7 +114,10 @@ function secondQuestion(username, score) {
 //   alert(`Oh no, ${username}! You ran out of guesses! The answer was ${goodguess}.`);}
 
 firstQuestion(username);
-secondQuestion(username, score);
-
+secondQuestion(username);
+thirdQuestion(username);
+//fourthQuestion(username, score);
+//fifthQuestion(username, score);
+//sixthQuestion(username, score);
 
 alert(`${username}, you've been a great sport! Your ending score is ${score}, but don't worry, there's no prize except the satisfaction of a game well played.`);
