@@ -106,31 +106,4 @@ if(guesses===0) {
   alert(`Oh no, ${username}! You ran out of guesses! The answer was ${goodguess}.`);
 }
 
-
-alert(`Ok, ${username}, last question! ${username}, I used to have cats named after Disney character. Can you guess which characters?`);
-alert('Here are your choices:');
-let guesschoice = ['mickey','minnie','goofy','donald','daisy','pluto','baloo','sneezy','pongo','lady'];
-//The correct choices are goofy and lady.
-let chances = 6;
-for (let i = 0; i<guesschoice.length; i++){
-  alert(guesschoice[i]);
-}
-
-while (chances > 0) {
-
-  let ques7 = prompt(`What's your guess? You have ${chances} chances left.`);
-  ques7 += ques7.toString.toLowerCase;
-  console.log(ques7);
-
-  if(ques7 === guesschoice[2].toLowerCase || ques7 === guesschoice[9].toLowerCase) {
-    chances = 0;
-    score++;
-    alert(`You're right ${username}!`);
-    console.log(`${ques7} is correct.`);
-  }
-  else{
-    chances--;
-    alert(`That's not it, ${username}. Try again.`);
-  }
-}
 alert(`${username}, you've been a great sport! Your ending score is ${score}, but don't worry, there's no prize except the satisfaction of a game well played.`);
