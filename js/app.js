@@ -1,128 +1,136 @@
 'use strict';
-/////////////////////////////////////
-/* Problem 1 (this is your demo that we'll solve in class)
-Write a function called sum() that takes in two numbers as arguments and then returns an array where the first element is the sum of those numbers, and the second element is a concatenated string that EXACTLY follows this example and uses the values that were input into the function:
 
-"The sum of 4 and 7 is 11."
+//remember these elements: five questions, username displayed at beginning and end
+//for class 3 lab add:
+//a 6th question to the guessing game that takes in a numeric input
+//by prompting the user to guess a number.
+//Indicates through an alert if the guess is “too high” or “too low”.
+//It should give the user exactly four opportunities to get the correct answer.
+//After all attempts have been exhausted, tell the user the correct answer. Consider using a loop of some sort.
+//a 7th question Add a 7th question that has multiple possible correct answers that are stored in an array.
+//Give the user 6 attempts to guess the correct answer.
+//The guesses will end once the user guesses a correct answer or they run out of attempts.
+//Display all the possible correct answers to the user.
+//Consider using a loop of some sort for this question.
+//adjust the final score to include the two new questions.
 
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
-// Write your code here
-function sum(a, b) { //eslint-disable-line
+console.log('hello');
+//Five questions with yes or no answers
+alert('Welcome to all about me!');
+let username = prompt('What is your name?');
+console.log(`Question: What is your name? Response: ${username}`);
+let score = 0;
+let ques1 = prompt(`Hi ${username}, I'm going to ask you a series of yes or no questions. For each correct answer, you get one point. Are you ready?`).toLowerCase();
+//console.log(`Question: Are you ready? Response: ${ques1}`);
 
+if(ques1 === 'yes' || ques1 === 'y' ) {
+  score = score + 1;
+  alert(`Ok ${username} that was an easy one. Your score is ${score}.`);
+  //console.log(`Ok ${username} that was an easy one. Your score is ${score}.`);
+}
+alert(`Next question!`);
+
+let ques2 = prompt('Will I ever be a super awesome code fiend?').toLowerCase();
+//console.log(`Question: Will I ever be a super awesome code fiend? Response: ${ques2});
+
+if(ques2 === 'yes' || ques2 === 'y' ) {
+  score = score + 1;
+  alert(`Oh ${username}, your confidence is inspiring! Your score is ${score}.`);
+  //console.log(`Oh ${username}, your confidence is inspiring! Your score is ${score}.`);
+}
+else {
+  alert(`Hmm. Well I don't know about that. Let's try another one.`);
+}
+let ques3 = prompt(`So ${username}, do you think I'll ever meet a plane I don't want to get on?`).toLowerCase();
+//console.log(`Question: Do you think I'll ever meet a plane I don't want to get on? Response: ${ques3});
+
+if(ques3 === 'yes' || ques3 === 'y' ) {
+  score = score + 1;
+  alert(`Well, you're right, ${username}. There are a few places I wouldn't want to end up! Your score is ${score}.`);
+  //console.log(`Well, you're right, ${username}. There are a few places I wouldn't want to end up! Your score is ${score}.`);
+}
+else {
+  alert(`Oh I don't know, there are a few places I wouldn't want to end up!`);
 }
 
-// Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+let ques4 = prompt(`Next question ${username}, is purple my favorite color?`).toLowerCase();
+//console.log(`Question: Is purple my favorite color? Response: ${ques4}`);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
-
-/////////////////////////////////////
-/* Problem 2
-Write a function called multiply() that takes in two numbers as arguments and returns an array where the first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
-
-"The product of 5 and 9 is 45."
-
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
-
-// Write your code here
-function multiply(a, b) { //eslint-disable-line
-
+if(ques4 === 'yes' || ques4 === 'y' ) {
+  score = score + 1;
+  alert(`What gave it away?!? Your score is ${score}.`);
+  //console.log(`What gave it away?!? Your score is ${score}.`);
+}
+else {
+  alert(`It certainly is, but blue is my second favorite, so I understand the confusion.`);
 }
 
-// Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+let ques5 = prompt(`Listen ${username}, I need a serious answer. Do you like my new hat?`).toLowerCase();
+//console.log(`Question: Do you like my new hat? Response: ${ques5}`);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
-
-/////////////////////////////////////
-/* Problem 3
-Write a function called sumAndMultiply() that takes in three numbers as separate arguments and returns an array where the first element is the sum of those three numbers, the second element is the product of those three numbers,  and the third and fourth elements are strings that EXACTLY follow this example and use the values that were input into the function:
-
-Third element: "4 and 7 and 5 sum to 16."
-Fourth element: "The product of 4 and 7 and 5 is 140."
-
-IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this function. To do addition, use your sum() function, and to do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
-
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
-
-// Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+if(ques5 === 'yes' || ques5 === 'y' ) {
+  score = score + 1;
+  alert(`It IS kind of a great party hat. Your score is ${score}.`);
+  //console.log(`It IS kind of a great party hat. Your score is ${score}.`);
+}
+else {
+  alert(`Not a fan of Go, Dog, Go, ${username}? That's ok.`);
 }
 
-// Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+let goodguess = Math.floor(Math.random() * 101);
+console.log(goodguess);
+//math code string found at https://www.w3schools.com/js/js_random.asp
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+let ques6 = prompt(`Let's try something else, ${username}. I'm thinking of a number between 1 and 100. Try to guess the number.`);
+//ques6 = Number(ques6); if we wanted to use strictly not equal this code would go here and at lines 93 and 96
+let guesses = 4;
 
-/////////////////////////////////////
-/* Problem 4
-Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
-
-"2,3,4 was passed in as an array of numbers, and 9 is their sum."
-
-IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
-
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
-
-// Write your code here
-let testArray = [2, 3, 4]; //eslint-disable-line
-
-function sumArray(sumArr) { //eslint-disable-line
-
+while(ques6 != goodguess && guesses >= 1) {
+  //console.log(`for loop`);
+  if(ques6 > goodguess){
+    ques6 = prompt(`Too high, ${username}. You have ${guesses} tries left. Next guess?`);
+    guesses--;
+  }
+  else if (ques6 < goodguess){
+    ques6 = prompt(`Too low, ${username}. You have ${guesses} tries left. Try again?`);
+    guesses--;
+  }
+}
+//console.log('You\'re out of the loop.');
+if(ques6==goodguess){
+  score++;
+  alert(`You got it, ${username}! Your score is ${score}.`);
+}
+if(guesses===0) {
+  alert(`Oh no, ${username}! You ran out of guesses! The answer was ${goodguess}.`);
 }
 
-// Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
-
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
-
-/////////////////////////////////////
-/* Problem 5
-Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
-
-"The numbers 2,3,4 have a product of 24."
-
-IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements. However, you may continue to use the + operator for string concatenation.
-
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
-
-// Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
-
+alert(`Ok, ${username}, last question! ${username}, I used to have cats named after Disney character. Can you guess which characters?`);
+alert('Here are your choices:');
+let guesschoice = ['mickey','minnie','goofy','donald','daisy','pluto','baloo','sneezy','pongo','lady'];
+//The correct choices are goofy and lady.
+let chances = 6;
+for (let i = 0; i<guesschoice.length; i++){
+  alert(guesschoice[i]);
 }
 
-// Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+while (chances > 0) {
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
+  let ques7 = prompt(`What's your guess? You have ${chances} chances left.`);
+  ques7 += ques7.toString.toLowerCase;
+  console.log(ques7);
 
-// You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
-
-// Don't forget to create a new branch for your work on the next question, if you attempt it.
-
-/////////////////////////////////////
-/* STRETCH GOAL: Problem 6
-Write a function called multiplyAnyArray() that takes an array of numbers of any length as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
-
-"The numbers 1,2,3,4,5 have a product of 120."
-
-IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
-
-This function should be dynamic, accepting an array of any length.
-
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
-
-// Write your code here
-let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
-
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+  if(ques7 === guesschoice[2].toLowerCase || ques7 === guesschoice[9].toLowerCase) {
+    chances = 0;
+    score++;
+    alert(`You're right ${username}!`);
+    console.log(`${ques7} is correct.`);
+  }
+  else{
+    chances--;
+    alert(`That's not it, ${username}. Try again.`);
+  }
 }
-
-// Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
-
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
+alert(`${username}, you've been a great sport! Your ending score is ${score}, but don't worry, there's no prize except the satisfaction of a game well played.`);
