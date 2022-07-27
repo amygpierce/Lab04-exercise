@@ -1,14 +1,7 @@
 'use strict';
 
-//remember these elements: five questions, username displayed at beginning and end
-//for class 3 lab add:
-//a 6th question to the guessing game that takes in a numeric input
-//by prompting the user to guess a number.
-//Indicates through an alert if the guess is “too high” or “too low”.
-//It should give the user exactly four opportunities to get the correct answer.
-
-//Consider using a loop of some sort for this question.
-//adjust the final score to include the two new questions.
+//for lab 4 turn the questions into functions
+//acp after each question
 
 
 console.log('hello');
@@ -85,38 +78,42 @@ function fifthQuestion(username) {
     alert(`Not a fan of Go, Dog, Go, ${username}? That's ok.`);
   }
 }
-// let goodguess = Math.floor(Math.random() * 101);
-// console.log(goodguess);
-// //math code string found at https://www.w3schools.com/js/js_random.asp
 
-// let ques6 = prompt(`Let's try something else, ${username}. I'm thinking of a number between 1 and 100. Try to guess the number.`);
-// //ques6 = Number(ques6); if we wanted to use strictly not equal this code would go here and at lines 93 and 96
-// let guesses = 4;
+function sixthQuestion(username) {
+  let goodguess = Math.floor(Math.random() * 101);
+  console.log(goodguess);
+  //math code string found at https://www.w3schools.com/js/js_random.asp
 
-// while (ques6 !== goodguess && guesses >= 1) {
-//   //console.log(`for loop`);
-//   if (ques6 > goodguess) {
-//     ques6 = prompt(`Too high, ${username}. You have ${guesses} tries left. Next guess?`);
-//     guesses--;
-//   }
-//   else if (ques6 < goodguess) {
-//     ques6 = prompt(`Too low, ${username}. You have ${guesses} tries left. Try again?`);
-//     guesses--;
-//   }
-// }
-// //console.log('You\'re out of the loop.');
-// if (ques6 === goodguess) {
-//   score++;
-//   alert(`You got it, ${username}! Your score is ${score}.`);
-// }
-// if (guesses === 0) {
-//   alert(`Oh no, ${username}! You ran out of guesses! The answer was ${goodguess}.`);}
+  let ques6 = prompt(`Let's try something else, ${username}. I'm thinking of a number between 1 and 100. Try to guess the number.`);
+  //ques6 = Number(ques6); if we wanted to use strictly not equal this code would go here and at lines 93 and 96
+  let guesses = 4;
+
+  while (ques6 !== goodguess && guesses >= 1) {
+    //console.log(`for loop`);
+    if (ques6 > goodguess) {
+      ques6 = prompt(`Too high, ${username}. You have ${guesses} tries left. Next guess?`);
+      guesses--;
+    }
+    else if (ques6 < goodguess) {
+      ques6 = prompt(`Too low, ${username}. You have ${guesses} tries left. Try again?`);
+      guesses--;
+    }
+  }
+  //console.log('You\'re out of the loop.');
+  if (ques6 === goodguess) {
+    score++;
+    alert(`You got it, ${username}! Your score is ${score}.`);
+  }
+  if (guesses === 0) {
+    alert(`Oh no, ${username}! You ran out of guesses! The answer was ${goodguess}.`);
+  }
+}
 
 firstQuestion(username);
 secondQuestion(username);
 thirdQuestion(username);
 fourthQuestion(username);
 fifthQuestion(username);
-//sixthQuestion(username, score);
+sixthQuestion(username);
 
 alert(`${username}, you've been a great sport! Your ending score is ${score}, but don't worry, there's no prize except the satisfaction of a game well played.`);
